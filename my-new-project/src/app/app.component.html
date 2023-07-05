@@ -1,0 +1,70 @@
+<!-- EP.3
+  <span>มา 4 จ่าย 3</span>
+<div> 
+  #priceBuffetinput คือการกำหนดตัวแปร
+   <input #priceBuffetInput type="text" value="00000"placeholder="ราคาบุฟเฟ่">
+  <button (click)="calBuffet(priceBuffetInput.value)">คำนวน</button>
+</div> 
+<span>
+  คนละ {{value}}บาท
+</span> ---------------------------- -->
+
+<!-- สร้างใน action-bar-component
+EP.4 สร้าง module มารับ component มาไว้เรียกใช้ app-action จาก action-bar.component 
+<app-action-bar></app-action-bar>
+<app-action-bar></app-action-bar>
+---------------------------- -->
+<!-- EP.5
+<app-action-bar [step] ="5"></app-action-bar>
+<app-action-bar [step] ="10"></app-action-bar>
+<app-action-bar></app-action-bar> -->
+
+<!-- EP.6 output numberchange
+(numberChange)="testNumberChabge()" คือทำ Event Binding ของ output -->
+<!-- <app-action-bar (numberChange)="testNumberChange()" [step]="5"></app-action-bar>
+<app-action-bar (numberChange)="testNumberChange()" [step]="10"></app-action-bar>
+<button type="button" (click)="testClick()">testEvenBinding</button> -->
+
+<!-- EP.7 output ค่า emit ที่เปลียน โดยใช้ $Event ในการส่งตัวแปรจาก component -->
+<!-- <app-action-bar (numberChange)="testNumberChange($event)" [step]="5"></app-action-bar>
+<EP.9app-action-bar (numberChange)="testNumberChange($event)" [step]="10"></EP.9app-action-bar>
+<button type="button" (click)="testClick()">testEvenBinding</button> -->
+
+<!-- Ep.8 High order component max/min 
+สร้าง max-min-componet
+[minLabel]="appminLabel" ใน "" คือ statement หากเป็น ตัวอักษรจะกลายเป็นตัวแปร
+[minLabel]="'appminLabel'" เพิ่ม '' เพื่อกำหนด string 
+-->
+
+<!-- <app-max-min-meter 
+[minLabel]="appminLabel" 
+[maxLabel]="appmaxLabel"
+
+(maxChange)="doAppMaxChange($event)"
+(minChange)="doAppMinChange($event)"
+>
+</app-max-min-meter> -->
+
+
+<!--
+  EP.9
+<app-square-flex [divHeight]="squareHeight" [divWidth]="squareWidth">
+</app-square-flex>
+
+<div>
+  width:
+  <button type="button" (click)="squareWidth = 50">50</button>
+  <button type="button" (click)="squareWidth = 100">100</button>
+  <button type="button" (click)="squareWidth = 200">200</button>
+</div> -->
+
+<!-- <app-action-bar [counter]="appCounter" 
+(counterChange)="appCounter = $event">
+</app-action-bar> -->
+
+<!-- two ways -->
+<app-action-bar [(counter)]="appCounter">
+</app-action-bar>
+<app-square-flex [divWidth]="appCounter">
+
+</app-square-flex>
